@@ -18,6 +18,27 @@ a{
     color: #7A7C80;
     text-decoration: none;
 }
+
+/* vertical split layout */
+.split-container {
+    display: flex;
+    min-height: 100vh;
+}
+.left-section {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 320px;
+    height: 100vh;
+    background-color: #101214;
+    color: #7A7C80;
+}
+.right-section {
+    margin-left: 320px;
+    flex: 1;
+    overflow-y: auto;
+}
+
 /* section 1 */
 .section-1{
     padding-top: 40vh;
