@@ -32,6 +32,7 @@ a{
     height: 100vh;
     background-color: #101214;
     color: #7A7C80;
+    overflow-y: auto;
 }
 .right-section {
     margin-left: 320px;
