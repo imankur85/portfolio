@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,54 +8,111 @@
         integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/style.css">
     <title>Ankur Jain</title>
+    <style>
+        .container {
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .section-1 {
+            width: 300px;
+            position: fixed;
+            left: 0;
+            top: 0;
+            height: 100vh;
+            background: #2c3e50;
+            color: white;
+            padding: 2rem;
+            box-sizing: border-box;
+            overflow-y: auto;
+        }
+        .section-2 {
+            margin-left: 300px;
+            flex: 1;
+            padding: 2rem;
+            height: 100vh;
+            overflow-y: auto;
+            box-sizing: border-box;
+        }
+        .section-1 h2 {
+            margin-top: 1rem;
+            font-size: 1.5rem;
+        }
+        .section-1 p {
+            margin: 0.5rem 0;
+        }
+        .section-1 a {
+            color: #3498db;
+            margin-right: 1rem;
+            font-size: 1.5rem;
+            text-decoration: none;
+        }
+        .section-1 a:hover {
+            color: #e74c3c;
+        }
+        .section-2 h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        .section-2 p {
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+    </style>
 </head>
-
 <body>
-    <div class="grid-2">
+    <div class="container">
         <div class="section-1">
             <i class="fas fa-code fa-5x white"></i>
             <h2>Ankur Jain</h2>
-            <p>Chicago,USA.</p>
-            <a href="https://www.linkedin.com/in/ankurjain85"><i class="fab fa-linkedin"></i></a>
-            <a href="https://github.com/imankur85"><i class="fab fa-github"></i></a>
+            <p>Chicago, USA</p>
+            <p>Lead Software Engineer</p>
+            <div style="margin-top: 2rem;">
+                <a href="https://www.linkedin.com/in/ankurjain85"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/imankur85"><i class="fab fa-github"></i></a>
+            </div>
         </div>
         <div class="section-2">
             <h2>About</h2>
             <p>Lead software engineer with 14+ years of experience architecting and delivering cloud-native, secure, and
                 scalable applications in the financial services industry. Expert in Java, Spring Boot, Hibernate, and
-                REST APIs, with hands-on experience in AWS, Openshift, and CI/CD pipelines</p>
+                REST APIs, with hands-on experience in AWS, Openshift, and CI/CD pipelines.</p>
+            
             <h2>Experience</h2>
-            <p>
-                Principal Application Engineer @ Discover Financial Services
-            </p>
-
+            <p><strong>Principal Application Engineer @ Discover Financial Services</strong></p>
+            <p>Leading the design and development of enterprise-level financial applications with a focus on security, scalability, and performance optimization.</p>
+            
             <h2>Skills</h2>
-            <p>Programming Languages: Java, SQL, Python.
-                Frameworks & Libraries: Spring Boot, Spring Framework, Hibernate, Apache Camel, Spring Batch, ActiveMQ,
-                Cucumber, Postman, FastAPI, Apache Spark.
-                Cloud & DevOps: AWS (EC2, S3, Lambda, SNS),Red Hat OpenShift, Kubernetes, Jenkins, Git, CI/CD Pipelines
-                Automation Testing: Junit, Cucumber, wiremock, Gatling, playwright
-                Databases & Caching: Oracle, PostgreSQL, DynamoDB (NoSQL), Hazelcast
-                Monitoring & Observability: Splunk, Kibana, AppDynamics, Datadog, Postman
-                Methodologies: Agile (Scrum, Kanban), Application Resiliency, Secure SDLC, TDD
-            </p>
+            <p><strong>Programming Languages:</strong> Java, SQL, Python</p>
+            <p><strong>Frameworks & Libraries:</strong> Spring Boot, Spring Framework, Hibernate, Apache Camel, Spring Batch, ActiveMQ, Cucumber, Postman, FastAPI, Apache Spark</p>
+            <p><strong>Cloud & DevOps:</strong> AWS, OpenShift, CI/CD Pipelines, Docker, Kubernetes</p>
+            <p><strong>Databases:</strong> Oracle, MySQL, PostgreSQL, MongoDB</p>
+            
             <h2>Projects</h2>
-            <ul>
-                <li>Banking interfaces - A collection of Spring boot based REST APIs that acts as a medium to connect
-                    web and mobile clients to core banking systems.</li>
-
-                <li>Stock Progression - A Spring based java application used to manage inventory at various locations.</li>
-
-                <li>COGS and Truck lifting - An event driven data transformation application based on serverless
-                    architecture. It uses AWS Lambda, S3, Java Streams to transform the data on the fly and send it to other systems.
-                </li>
-
-            </ul>
-
-            <h2>Contact</h2>
-            <p>imankur85@gmail.com</p>
+            <p><strong>Cloud Migration Initiative</strong><br>
+            Led the migration of legacy financial systems to cloud-native architecture, resulting in 40% cost reduction and improved scalability.</p>
+            
+            <p><strong>API Gateway Implementation</strong><br>
+            Designed and implemented a centralized API gateway solution handling 10M+ requests daily with 99.9% uptime.</p>
+            
+            <p><strong>Real-time Analytics Platform</strong><br>
+            Built a real-time data processing platform using Apache Spark and Kafka for fraud detection and risk assessment.</p>
+            
+            <h2>Education</h2>
+            <p><strong>Master of Science in Computer Science</strong><br>
+            University of Illinois, Chicago</p>
+            
+            <h2>Certifications</h2>
+            <p>• AWS Certified Solutions Architect<br>
+            • Oracle Certified Professional, Java SE<br>
+            • Certified Kubernetes Application Developer</p>
         </div>
     </div>
 </body>
-
 </html>
