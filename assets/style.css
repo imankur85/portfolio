@@ -11,7 +11,6 @@ body{
     background-color: #101214;
     color: #7A7C80;
 }
-
 /* VS Code color scheme for headlines */
 h1 {
     color: #569CD6; /* VS Code blue for keywords/types */
@@ -31,7 +30,6 @@ h5 {
 h6 {
     color: #CE9178; /* VS Code orange for strings */
 }
-
 /* Keep existing h2 white style for specific elements */
 h2.white,
 .white{
@@ -130,5 +128,60 @@ a{
         padding: 0;
         padding-left: 1.5rem;
         padding-top: 2rem;
+    }
+}
+
+/* Mobile optimization improvements - Sept 2025 */
+@media(max-width:780px){
+    .split-container {
+        flex-direction: column;
+    }
+    .left-section {
+        position: static;
+        width: 100%;
+        height: auto;
+        order: 1;
+    }
+    .right-section {
+        margin-left: 0;
+        width: 100%;
+        order: 2;
+    }
+    .section-1 h2 {
+        font-size: 1.4rem;
+    }
+    .section-2 h2 {
+        font-size: 1.4rem;
+    }
+    .section-1 p {
+        font-size: 1rem;
+    }
+    .section-2 p {
+        font-size: 1rem;
+    }
+}
+
+@media(max-width:480px){
+    .section-1 h2 {
+        font-size: 1.2rem;
+    }
+    .section-2 h2 {
+        font-size: 1.2rem;
+    }
+    .section-1 p {
+        font-size: 0.9rem;
+    }
+    .section-2 p {
+        font-size: 0.9rem;
+    }
+    .section-1 a {
+        font-size: 1.2rem;
+    }
+    .section-2 a {
+        font-size: 1rem;
+    }
+    .section-2 {
+        width: 95%;
+        padding-left: 1rem;
     }
 }
