@@ -11,14 +11,36 @@ body{
     background-color: #101214;
     color: #7A7C80;
 }
-h2,.white{
+
+/* VS Code color scheme for headlines */
+h1 {
+    color: #569CD6; /* VS Code blue for keywords/types */
+}
+h2 {
+    color: #DCDCAA; /* VS Code yellow for functions */
+}
+h3 {
+    color: #4EC9B0; /* VS Code cyan for constants/enums */
+}
+h4 {
+    color: #C586C0; /* VS Code purple for keywords */
+}
+h5 {
+    color: #9CDCFE; /* VS Code light blue for parameters */
+}
+h6 {
+    color: #CE9178; /* VS Code orange for strings */
+}
+
+/* Keep existing h2 white style for specific elements */
+h2.white,
+.white{
     color: #fff;
 }
 a{
     color: #7A7C80;
     text-decoration: none;
 }
-
 /* vertical split layout */
 .split-container {
     display: flex;
@@ -39,7 +61,6 @@ a{
     flex: 1;
     overflow-y: auto;
 }
-
 /* section 1 */
 .section-1{
     padding-top: 40vh;
