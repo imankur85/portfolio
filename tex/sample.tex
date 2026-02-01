@@ -1,0 +1,248 @@
+%-----------------------------------------------------------------------------------------------------------------------------------------------%
+%	The MIT License (MIT)
+%
+%	Copyright (c) 2021 Jitin Nair
+%
+%	Permission is hereby granted, free of charge, to any person obtaining a copy
+%	of this software and associated documentation files (the "Software"), to deal
+%	in the Software without restriction, including without limitation the rights
+%	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+%	copies of the Software, and to permit persons to whom the Software is
+%	furnished to do so, subject to the following conditions:
+%	
+%	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+%	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+%	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+%	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+%	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+%	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+%	THE SOFTWARE.
+%	
+%
+%-----------------------------------------------------------------------------------------------------------------------------------------------%
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT DEFINITION
+%----------------------------------------------------------------------------------------
+
+% article class because we want to fully customize the page and not use a cv template
+\documentclass[a4paper,12pt]{article}
+
+%----------------------------------------------------------------------------------------
+%	FONT
+%----------------------------------------------------------------------------------------
+
+% % fontspec allows you to use TTF/OTF fonts directly
+% \usepackage{fontspec}
+% \defaultfontfeatures{Ligatures=TeX}
+
+% % modified for ShareLaTeX use
+% \setmainfont[
+% SmallCapsFont = Fontin-SmallCaps.otf,
+% BoldFont = Fontin-Bold.otf,
+% ItalicFont = Fontin-Italic.otf
+% ]
+% {Fontin.otf}
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES
+%----------------------------------------------------------------------------------------
+\usepackage{url}
+\usepackage{parskip} 	
+
+%other packages for formatting
+\RequirePackage{color}
+\RequirePackage{graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[scale=0.9]{geometry}
+
+%tabularx environment
+\usepackage{tabularx}
+
+%for lists within experience section
+\usepackage{enumitem}
+
+% centered version of 'X' col. type
+\newcolumntype{C}{>{\centering\arraybackslash}X} 
+
+%to prevent spillover of tabular into next pages
+\usepackage{supertabular}
+\usepackage{tabularx}
+\newlength{\fullcollw}
+\setlength{\fullcollw}{0.47\textwidth}
+
+%custom \section
+\usepackage{titlesec}				
+\usepackage{multicol}
+\usepackage{multirow}
+
+%CV Sections inspired by: 
+%http://stefano.italians.nl/archives/26
+\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{9pt}{9pt}
+
+%for publications
+\usepackage[style=authoryear,sorting=ynt, maxbibnames=2]{biblatex}
+
+%Setup hyperref package, and colours for links
+\usepackage[unicode, draft=false]{hyperref}
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
+\addbibresource{citations.bib}
+\setlength\bibitemsep{1em}
+
+%for social icons
+\usepackage{fontawesome5}
+
+%debug page outer frames
+%\usepackage{showframe}
+
+\usepackage{ragged2e} % For better justification than \raggedright
+\newcommand{\sectionbreak}{\vspace{4pt}} % New command for consistent spacing
+
+% Redefine the 'X' column to be left-aligned and wrap by default
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}
+
+% job listing environments
+\newenvironment{jobshort}[2]
+    {
+    \begin{tabularx}{\linewidth}{@{}l X r@{}}
+    \textbf{#1} & \hfill &  #2 \\[3.75pt]
+    \end{tabularx}
+    }
+    {
+    }
+
+\newenvironment{joblong}[2]
+    {
+    \begin{tabularx}{\linewidth}{@{}l X r@{}}
+    \textbf{#1} & \hfill &  #2 \\[3.75pt]
+    \end{tabularx}
+    \begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt,label=--]
+    }
+    {
+    \end{itemize}
+    \end{minipage}    
+    }
+
+
+
+%----------------------------------------------------------------------------------------
+%	BEGIN DOCUMENT
+%----------------------------------------------------------------------------------------
+\begin{document}
+
+% non-numbered pages
+\pagestyle{empty} 
+
+%----------------------------------------------------------------------------------------
+%	TITLE
+%----------------------------------------------------------------------------------------
+
+% \begin{tabularx}{\linewidth}{ @{}X X@{} }
+% \huge{Your Name}\vspace{2pt} & \hfill \emoji{incoming-envelope} email@email.com \\
+% \raisebox{-0.05\height}\faGithub\ username \ | \
+% \raisebox{-0.00\height}\faLinkedin\ username \ | \ \raisebox{-0.05\height}\faGlobe \ mysite.com  & \hfill \emoji{calling} number
+% \end{tabularx}
+
+\begin{tabularx}{\linewidth}{@{} C @{}}
+\Huge{Full Name} \\[7.5pt]
+\href{https://github.com}{\raisebox{-0.05\height}\faGithub\ github} \ $|$ \ 
+\href{https://linkedin.com}{\raisebox{-0.05\height}\faLinkedin\ linkedin} \ $|$ \ 
+%\href{https://mysite.com}{\raisebox{-0.05\height}\faGlobe \ mysite.com} \ $|$ \ 
+\href{mailto:email@gmail.com}{\raisebox{-0.05\height}\faEnvelope \ email@gmail.com} \ $|$ \ 
+\href{tel:+123456789}{\raisebox{-0.05\height}\faMobile \ +123456789} \\
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+% EXPERIENCE SECTIONS
+%----------------------------------------------------------------------------------------
+
+%Interests/ Keywords/ Summary
+\section{Summary}
+\textbf{Lead Software Engineer} with 14+ years of experience delivering cloud-native, secure, and scalable applications in \textbf{Trading and Financial Services}. \begin{itemize}[nosep, leftmargin=1em, itemsep=1pt,label=--]\item Expert in \textbf{Java, Spring Boot, Hibernate, Postgres} for high-throughput microservices architecture. \item Proven success in \textbf{DevOps, AWS, Kubernetes/OpenShift, and CI/CD}, reducing deployment times by \textbf{40\%} and ensuring \textbf{99.99\%} uptime. \item Skilled in \textbf{Agile, TDD, and team leadership} (5+ engineers), driving technical innovation and legacy system modernization. \end{itemize}
+
+%Experience
+\section{Work Experience}
+
+\begin{joblong}{Principal Application Engineer - Company1, Chicago}{June 2021 - present}
+\item Led a team of 5 engineers in agile Scrum, delivering secure loan servicing solutions and mentoring on Java, Spring Boot, and REST API best practices in a financial services environment.
+\item Architected and developed Java-based microservices using Spring Boot, Hibernate and Postgres, integrating legacy systems with web/mobile platforms, reducing latency by 30\%.
+\item Spearheaded migration of 5+ legacy SOAP services to REST APIs using microservices design pattern, improving system reliability and availability.
+\item Orchestrated the migration of 13+ critical banking APIs to AWS Red Hat OpenShift/Kubernetes, achieving 99.99\% uptime and enabling proactive issue resolution via enhanced observability tooling.
+\item Developed Python-based microservices with FastAPI and OAuth 2.0 for secure single sign-on.
+\item Built automation tests and CICD pipelines using Cucumber and Jenkins to ensure quality and reducing regression cycle time by 25\%.
+\item Conducted proof-of-concepts (POCs) to evaluate NoSQL databases (DynamoDB), enhancing scalability for high-throughput applications.
+\end{joblong}
+
+\begin{joblong}{Technology Lead - Company2 Chicago, London, Bangalore}{July 2010 - June 2021}
+\item Designed and developed 3 mission-critical Java event-driven applications (Spring, Apache Camel, ActiveMQ, Oracle), integrating multiple business segments and improving data processing time by 35\%.
+\item Led a globally distributed team of 4 developers and 2 quality analysts in agile Scrum, collaborating with architects and analysts to deliver secure, scalable solutions for trading financial services.
+\item Implemented microservices architecture with Openshift Kubernetes and Jenkins CI/CD pipelines, enabling cloud-native deployment on AWS EC2 and S3.
+\item Standardized development across the division by creating reusable Spring libraries and components, reducing new feature turnaround time by 40\%.
+\item Prototyped serverless architectures using AWS Lambda for high throughput and cost effective cloud applications.
+\item Migrated legacy Java EE applications to AWS cloud, leveraging EC2 and S3 for scalability and operational stability.
+\item Developed event-driven Java applications using ActiveMQ, integrating external data sources with 99.9\% reliability for trading systems.
+\item Optimized search performance by implementing Hazelcast in-memory data grid, cutting query times by 50\%
+\end{joblong}
+%----------------------------------------------------------------------------------------
+%	SKILLS
+%----------------------------------------------------------------------------------------
+\section{Skills}
+\begin{tabularx}{\linewidth}{@{} l >{\raggedright\arraybackslash}X @{}}
+\textbf{Programming Languages:} & Java, SQL, Python. \\
+\textbf{Frameworks \& Libraries:} & Spring Boot, Spring Framework, Hibernate, Apache Camel, Spring Batch, ActiveMQ, FastAPI, SOAP, REST APIs. \\
+\textbf{Cloud \& DevOps:} & AWS (EC2, S3, Lambda, SNS), Red Hat OpenShift, Kubernetes, Jenkins, Git, CI/CD Pipelines \\
+\textbf{Automation Testing:} & Junit, Cucumber, WireMock, Gatling, Playwright \\
+\textbf{Databases \& Caching:} & Oracle, PostgreSQL, DynamoDB (NoSQL), Hazelcast \\
+\textbf{Monitoring \& Observability:} & Splunk, Kibana, AppDynamics, Datadog \\
+\textbf{Methodologies:} & Agile (Scrum, Kanban), Application Resiliency, Secure SDLC, TDD \\
+\end{tabularx}
+
+
+%Projects
+\section{Projects}
+\textbf{Banking Interfaces}
+\vspace{2pt}
+\begin{itemize}[nosep, leftmargin=1em, itemsep=3pt,label=--]
+    \item Developed Spring Boot-based REST APIs to connect web/mobile clients to core banking systems, enhancing customer access in financial services.
+    \item Modernized legacy SOAP services into REST microservices, reducing downtime and improving testability with Cucumber and Wiremock.
+    \item Migrated APIs to AWS Red Hat OpenShift, achieving zero downtime and enhanced observability via Datadog.
+\end{itemize}
+
+\textbf{Stock Progression}
+\vspace{2pt}
+\begin{itemize}[nosep, leftmargin=1em, itemsep=3pt,label=--]
+    \item A Spring-based Java application used to manage inventory at various locations.
+    \item Optimized performance by $\mathbf{70\%}$ using Hazelcast caching and fine-tuned Hibernate SQL queries for Postgres databases.
+    \item Implemented event-driven architecture with ActiveMQ, ensuring real-time data reliability for mission-critical systems.
+\end{itemize}
+
+\textbf{COGS and Truck Lifting}
+\vspace{2pt}
+\begin{itemize}[nosep, leftmargin=1em, itemsep=3pt,label=--]
+    \item Designed an event-driven data transformation pipeline using AWS Lambda, S3, and Java Streams for on-the-fly data processing.
+    \item Developed a file-based ETL application using Spring Batch with parallel streams to efficiently process large files and push output to downstream applications.
+\end{itemize}
+%----------------------------------------------------------------------------------------
+%	CERTIFICATIONS
+%----------------------------------------------------------------------------------------
+\section{Certifications}
+
+\begin{tabularx}{\linewidth}{@{} l >{\raggedleft\arraybackslash}X @{}}
+\textbf{AWS Certified Solutions Architect – Associate} & \textit{2025} \\
+\textbf{Sun Certified Java Programmer 6} & \textit{2010} \\
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION
+%----------------------------------------------------------------------------------------
+\section{Education}
+
+\begin{tabularx}{\linewidth}{@{} l >{\raggedleft\arraybackslash}X @{}}
+\textbf{Master of Computer Applications (MCA)} at Some University, India & 2006 – 2009 \\
+\textbf{B.Com with Computer Application} at Other University, India & 2003 – 2006 \\
+\end{tabularx}
+
+\end{document}
